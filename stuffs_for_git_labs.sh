@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo git labs >> README.md
 echo a >> a.txt
 echo b >> b.txt
 echo c >> c.txt
