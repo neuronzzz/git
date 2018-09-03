@@ -38,3 +38,15 @@ git add f.txt
 git commit -m "add f.txt"
 git add g.txt
 git commit -m "add g.txt"
+
+#创建topic分支，并构建相应的commit
+git add a.txt
+git commit -m "add a.txt"
+git add b.txt
+git commit -m "add b.txt"
+git add c.txt
+git commit -m "add c.txt"
+
+#执行rebase，完成实验结果
+git rebase master #当前branch是topic
+git rebase master topic #当前branch可以是任意branch
