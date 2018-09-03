@@ -1,0 +1,24 @@
+git commit -m 注释可以通过单引号来换行，比如：
+
+git commit -m '
+
+1.line1
+
+2.line2
+
+'
+
+通过git commit --amend 命令可以查看到刚刚的log信息为
+
+1.line1
+
+2.line2
+
+
+
+另外git commit 命令中的-s选项可以自动添加Signed-off by信息.会在commit信息中自动添加用户名和用户的邮件地址。用户名和用户邮件地址可以通过以下命令来设置
+
+git config --global user.name    xxx
+
+git config --global user.email  xxxxx
+
