@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#参考文件： 
+#https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 #下面的脚本是用来做rebase的实验的，参考的资料是git rebase --help
 
 #生成提交文件
@@ -47,6 +49,18 @@ git commit -m "add b.txt"
 git add c.txt
 git commit -m "add c.txt"
 
-#执行rebase，完成实验结果
+#执行rebase，完成实验结果，rebase，相当于把当前branch或者指定的某个branch的基换成一个指定的branch
 git rebase master #当前branch是topic
 git rebase master topic #当前branch可以是任意branch
+
+#最后执行merge，把topic branch merge到master，然后删除topic，下面这个是一个最好的例子：
+#当前开发的branch是feature branch
+git checkout feature
+#创建一个新的基于feature的临时branch
+git checkout -b temporary-branch
+#把当前的临时feature branch rebase到master上
+git rebase -i master
+#切换到master，并merge临时的feature branch，然后可以删除临时的feature branch，这个时候，feature branch未受任何影响
+# [Clean up the history]
+git checkout master
+git merge temporary-branch
