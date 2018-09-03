@@ -6,4 +6,4 @@ echo c >> c.txt
 echo d >> d.txt
 echo f >> f.txt
 echo e >> e.txt
-ehoc g >> g.txt
+echo g >> g.txt
